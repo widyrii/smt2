@@ -21,3 +21,14 @@ Route::controllers([
 	'password'=> 'Auth\PasswordController',
 	]);
 
+Route::get('master/currency', 'HomeController@view_Currency');
+
+Route::get('cronGetCurrency', 'HomeController@get_Currency');
+
+Route::get('master/language', 'HomeController@view_Language');
+
+Route::get('cronGetLanguage', 'HomeController@get_Language');
+
+Route::get('master/country', 'HomeController@view_Country');
+
+Route::get('cronGetcountry', 'HomeController@get_Country');
