@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Curl extends Model
+class SearchData extends Model
 {
     //
 }

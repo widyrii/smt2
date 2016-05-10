@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCurrenciesTable extends Migration
+class CreateLangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
+        Schema::create('langs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('code');
+            $table->string('name_long');
+            $table->string('name_short');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -25,6 +27,6 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('currencies');
+        Schema::drop('langs');
     }
 }

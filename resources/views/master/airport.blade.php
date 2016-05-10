@@ -2,17 +2,17 @@
 <table>
 	<thead>
 		<tr>
-			<th>Country ID</th>
-			<th>Country Name</th>
-			<th>Country AreaCode</th>
+			<th>Airport Name</th>
+			<th>Location</th>
+			<th>Country</th>
 		</tr>
 	</thead>
 	<tbody>
 		@foreach($data as $key)
 		<tr>
+			<td>{{ $key->airport_name }}</td>
+			<td>{{ $key->location_name }}</td>
 			<td>{{ $key->country_id }}</td>
-			<td>{{ $key->country_name }}</td>
-			<td>{{ $key->country_areacode }}</td>
 		</tr>
 		@endforeach
 	</tbody>
