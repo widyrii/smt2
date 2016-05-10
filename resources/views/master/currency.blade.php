@@ -1,3 +1,6 @@
+@extends('app_flight')
+@section('content')
+
 <h4>Currency</h4>
 <table>
 	<thead>
@@ -15,3 +18,4 @@
 		@endforeach
 	</tbody>
 </table>
+@endsection

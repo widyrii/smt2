@@ -1,6 +1,9 @@
+@extends('app_flight')
+@section('content')
+
 <h4>Language</h4>
 <table>
-	<thead>s
+	<thead>
 		<tr>
 			<th>Code</th>
 			<th>Name Long</th>
@@ -17,3 +20,4 @@
 		@endforeach
 	</tbody>
 </table>
+@endsection
