@@ -18,15 +18,15 @@ class CreateSearchDatasTable extends Migration
             $table->string('arrive_city');
             $table->string('depart_date');
             $table->string('return_date');
-            $table->interger('adult');
-            $table->interger('child');
-            $table->interger('infent');
-            $table->interger('var');
+            $table->integer('adult');
+            $table->integer('child');
+            $table->integer('infant');
+            $table->integer('ver');
+            $table->string('token');
             $table->longtext('result');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

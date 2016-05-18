@@ -39,3 +39,6 @@ Route::controllers([
 
   Route::get('airline/flight', ['as'=>'airline/flight',
                                     'uses'=>'Reservasi@flight']);
+
+  Route::post('airline/flight/search', ['as'=>'ajax_search_flight',
+                                    'uses'=>'Reservasi@searchflight']);

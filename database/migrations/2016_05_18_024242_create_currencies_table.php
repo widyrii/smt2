@@ -1,8 +1,6 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateCurrenciesTable extends Migration
 {
     /**
@@ -29,4 +27,3 @@ class CreateCurrenciesTable extends Migration
         Schema::drop('currencies');
     }
 }
-Status API Training Shop Blog About
