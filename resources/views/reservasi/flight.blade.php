@@ -100,15 +100,42 @@
 							infant:$("#infant").val(),
 							_token:'{{csrf_token()}}'
 						},
-						success:function(data){
-							var hasil_depart = data.departures;
+						dataType:'json',
+       success:function(data){
+         var hasil_depart = data.departures;
+         console.log(hasil_depart);
+         var res_depart = hasil_depart.result;
+         var html = '<ul class="collapsible poput">';
+         for (data in res_depart) {
 
-							var res_depart = hasil_depart.result;
-
-							var html = "<ul class=''"
-									// $("#result").html(data);
-						}
-		})
-	}
-</script>
-@endsection
+           html+= '<li>';
+           html+= '<div class="collapsible-header">';
+           html+= res_depart[data].airlines_name;
+           html+= '</div>';
+           html+= '<div class="collapsible-body">';
+           var flights = res_depart[data].flight_infos;
+           var flight_infos = flights.flight_info;
+           for(info in flight_infos){
+             html += '<h4>' +flight_infos[info].flight_number+'</h4>';
+             html += '<br>';
+             html += '<div class="left>';
+             html += flight_infos[info].departure_city+' at '
+                     +flight_infos[info].simple_departure_time;
+             html += '</div>';
+             html += '<div class="right">';
+             html += flight_infos[info].arrival_city+' at '
+                     +flight_infos[info].simple_arrival_time;
+             html += '</div>';
+             html += '</hr>';
+           }
+           html += '</div>';
+           html += '</li>';
+       }
+       html += '</ul>';
+         $("#result").html(html);
+         $('.collapsible').collapsible();
+     }
+   })
+ }
+ </script>
+ @endsection
